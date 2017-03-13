@@ -24,10 +24,17 @@ trait Cost {
 
 fn main() {
     let am = Hotel{p: 200.00};
-    cost_of_hotel(am);
+    let bm = Airline{p: 300.00};
+
+    let mut ab:Cost = Vec::new();
+
+    ab.push(am);
+    ab.push(bm);
+
+    cost_of_items(am);
 }
 
-fn cost_of_hotel<T: Cost>(item: T) {
+fn cost_of_items<T: Cost>(items: Vec<T>) {
     let cost = item.price();
-    println!("Cost of hotel is: {}", cost);
+    println!("Cost of hotel is: ${}", cost);
 }
