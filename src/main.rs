@@ -47,5 +47,5 @@ fn main() {
 
 fn cost_of_item<T: Cost>(item: &T) {
     let cost = item.price();
-    println!("Cost of hotel is: {}", cost);
+    println!("Cost of hotel is: ${}", cost);
 }
